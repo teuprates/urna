@@ -1,6 +1,8 @@
 package com.mycompany.view;
 
 import controller.UrnaController;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 import model.Candidato;
 import javax.swing.JOptionPane;
 
@@ -11,8 +13,9 @@ public class Urna extends javax.swing.JFrame {
  
     public Urna() {
         initComponents();
+        fim.setVisible(false);
     }
-
+    
 
     @SuppressWarnings("unchecked")
     
@@ -233,12 +236,12 @@ public class Urna extends javax.swing.JFrame {
                     .addComponent(btnConfirma, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCorrige, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         telaUrna.setBackground(new java.awt.Color(153, 153, 153));
         telaUrna.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        telaUrna.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        telaUrna.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
 
         labelFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -254,25 +257,25 @@ public class Urna extends javax.swing.JFrame {
         vereador.setForeground(new java.awt.Color(0, 0, 0));
         vereador.setText("VEREADOR");
 
-        numero.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        numero.setFont(new java.awt.Font("Segoe UI", 0, 32)); // NOI18N
         numero.setForeground(new java.awt.Color(0, 0, 0));
         numero.setText("NÚMERO:");
 
-        nome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        nome.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         nome.setForeground(new java.awt.Color(0, 0, 0));
         nome.setText("NOME:");
 
-        partido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        partido.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         partido.setForeground(new java.awt.Color(0, 0, 0));
         partido.setText("PARTIDO:");
 
         linhaSeparator.setBackground(new java.awt.Color(0, 0, 0));
         linhaSeparator.setForeground(new java.awt.Color(0, 0, 0));
 
-        labelNome.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelNome.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         labelNome.setForeground(new java.awt.Color(0, 0, 0));
 
-        labelPartido.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPartido.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         labelPartido.setForeground(new java.awt.Color(0, 0, 0));
 
         aperteTecla.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -303,23 +306,23 @@ public class Urna extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(vereador, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(telaUrnaLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(9, 9, 9)
                         .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(telaUrnaLayout.createSequentialGroup()
-                                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(telaUrnaLayout.createSequentialGroup()
-                                .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addComponent(numero)
+                                .addGap(24, 24, 24)
                                 .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(telaUrnaLayout.createSequentialGroup()
-                                .addComponent(partido, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(labelPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(67, 67, 67)
-                                .addComponent(fim, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
+                                .addComponent(labelNome, javax.swing.GroupLayout.PREFERRED_SIZE, 471, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(fim, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(telaUrnaLayout.createSequentialGroup()
+                                .addComponent(partido)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(labelPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)
                 .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34))
             .addComponent(linhaSeparator)
@@ -340,35 +343,36 @@ public class Urna extends javax.swing.JFrame {
             .addGroup(telaUrnaLayout.createSequentialGroup()
                 .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(telaUrnaLayout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(seuvoto)
-                            .addComponent(vereador))
-                        .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(telaUrnaLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(telaUrnaLayout.createSequentialGroup()
-                                .addGap(30, 30, 30)
-                                .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(28, 28, 28)
-                        .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelNome))
-                        .addGap(10, 10, 10)
-                        .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(telaUrnaLayout.createSequentialGroup()
-                                .addGap(77, 77, 77)
-                                .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(partido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(labelPartido)))
-                            .addGroup(telaUrnaLayout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(fim, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(telaUrnaLayout.createSequentialGroup()
                         .addGap(55, 55, 55)
-                        .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 134, Short.MAX_VALUE)
+                        .addComponent(labelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(partido, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106))
+                    .addGroup(telaUrnaLayout.createSequentialGroup()
+                        .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(telaUrnaLayout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(seuvoto)
+                                    .addComponent(vereador))
+                                .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(telaUrnaLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(telaUrnaLayout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(77, 77, 77)
+                                .addGroup(telaUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nome, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(labelNome, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(71, 71, 71))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaUrnaLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(fim, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19)))
+                        .addComponent(labelPartido, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(97, 97, 97)))
                 .addComponent(linhaSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(aperteTecla, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -386,9 +390,9 @@ public class Urna extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, UrninhaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(telaUrna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(tecladoUrna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(30, 30, 30))
         );
         UrninhaLayout.setVerticalGroup(
             UrninhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -430,6 +434,7 @@ public class Urna extends javax.swing.JFrame {
         labelNome.setText("");
         labelPartido.setText("");
         labelFoto.setText("");
+        fim.setVisible(false); // Esconde o "FIM"
     }//GEN-LAST:event_btnCorrigeActionPerformed
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
@@ -465,29 +470,48 @@ public class Urna extends javax.swing.JFrame {
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btnConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmaActionPerformed
-       String numero = campoNumero.getText();
-        UrnaController urnacontroller = new UrnaController();
-        Candidato candidato = urnacontroller.buscarPorNumero(numero);
+      String numero = campoNumero.getText();
+        UrnaController urnaController = new UrnaController();
+        Candidato candidato = urnaController.buscarPorNumero(numero);
 
-        if (numero.equals("Branco")) {
-            labelNome.setText("Branco");
-            labelPartido.setText("");
-            labelFoto.setText("");
-            return;
-        }
-         if (numero.equals("99999")) {
-        JOptionPane.showMessageDialog(null, "Encerrando votação!");
+    if (numero.equalsIgnoreCase("Branco")) {
+        labelNome.setText("Branco");
+        labelPartido.setText("");
+        labelFoto.setIcon(null);
+        labelFoto.setText("Voto em Branco");
+        fim.setVisible(true);
         return;
     }
-        if (candidato != null) {
-            labelNome.setText("" + candidato.getNome());
-            labelPartido.setText("" + candidato.getPartido());
-            labelFoto.setText("" + candidato.getFoto());
-            
-        } else {
-            labelNome.setText("VOTO NULO");
-            labelPartido.setText("Número inválido");
-            labelFoto.setText("");
+
+    if (numero.equals("99999")) {
+        JOptionPane.showMessageDialog(null, "Encerrando votação!");
+        System.exit(0);
+        return;
+    }
+
+    if (candidato != null) {
+        labelNome.setText(candidato.getNome());
+        labelPartido.setText(candidato.getPartido());
+
+        try {
+            String caminhoImagem = "/imgs/" + candidato.getNumero() + ".png";
+            ImageIcon imagem = new ImageIcon(getClass().getResource(caminhoImagem));
+            Image img = imagem.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+            labelFoto.setIcon(new ImageIcon(img));
+            labelFoto.setText(""); // limpa texto se imagem for carregada
+        } catch (Exception e) {
+            labelFoto.setIcon(null);
+            labelFoto.setText("Imagem não encontrada");
+            System.err.println("Erro ao carregar imagem: " + e.getMessage());
+        }
+
+        fim.setVisible(true);
+    } else {
+        labelNome.setText("VOTO NULO");
+        labelPartido.setText("Número inválido");
+        labelFoto.setIcon(null);
+        labelFoto.setText("Foto indisponível");
+        fim.setVisible(true);
             
         }     
     }//GEN-LAST:event_btnConfirmaActionPerformed
