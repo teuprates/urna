@@ -433,7 +433,7 @@ public class Urna extends javax.swing.JFrame {
         campoNumero.setText("");
         labelNome.setText("");
         labelPartido.setText("");
-        labelFoto.setText("");
+        labelFoto.setIcon(null);
         fim.setVisible(false); // Esconde o "FIM"
     }//GEN-LAST:event_btnCorrigeActionPerformed
 
@@ -474,22 +474,19 @@ public class Urna extends javax.swing.JFrame {
         UrnaController urnaController = new UrnaController();
         Candidato candidato = urnaController.buscarPorNumero(numero);
 
+    boolean votoFinalizado = false;
+
     if (numero.equalsIgnoreCase("Branco")) {
         labelNome.setText("Branco");
         labelPartido.setText("");
         labelFoto.setIcon(null);
         labelFoto.setText("Voto em Branco");
         fim.setVisible(true);
-        return;
-    }
-
-    if (numero.equals("99999")) {
+        votoFinalizado = true;
+    } else if (numero.equals("99999")) {
         JOptionPane.showMessageDialog(null, "Encerrando votação!");
         System.exit(0);
-        return;
-    }
-
-    if (candidato != null) {
+    } else if (candidato != null) {
         labelNome.setText(candidato.getNome());
         labelPartido.setText(candidato.getPartido());
 
@@ -498,21 +495,26 @@ public class Urna extends javax.swing.JFrame {
             ImageIcon imagem = new ImageIcon(getClass().getResource(caminhoImagem));
             Image img = imagem.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
             labelFoto.setIcon(new ImageIcon(img));
-            labelFoto.setText(""); // limpa texto se imagem for carregada
+            labelFoto.setText(""); // limpa texto se imagem carregou
         } catch (Exception e) {
             labelFoto.setIcon(null);
             labelFoto.setText("Imagem não encontrada");
-            System.err.println("Erro ao carregar imagem: " + e.getMessage());
         }
 
         fim.setVisible(true);
+        votoFinalizado = true;
     } else {
         labelNome.setText("VOTO NULO");
         labelPartido.setText("Número inválido");
         labelFoto.setIcon(null);
         labelFoto.setText("Foto indisponível");
         fim.setVisible(true);
-            
+        votoFinalizado = true;
+    }
+
+    // Só limpa se o voto foi finalizado (válido, nulo ou branco)
+    if (votoFinalizado) {
+        iniciarTemporizadorLimpeza();
         }     
     }//GEN-LAST:event_btnConfirmaActionPerformed
 
@@ -522,6 +524,26 @@ public class Urna extends javax.swing.JFrame {
         labelPartido.setText("");
         labelFoto.setText("");
     }//GEN-LAST:event_btnBrancoActionPerformed
+
+    private void iniciarTemporizadorLimpeza() {
+    int delay = 3000; // 3 segundos
+
+    javax.swing.Timer timer = new javax.swing.Timer(delay, e -> {
+        campoNumero.setText("");
+        labelNome.setText("");
+        labelPartido.setText("");
+        labelFoto.setIcon(null);
+        labelFoto.setText("");
+        fim.setVisible(false);
+
+        // Para o timer após execução
+        ((javax.swing.Timer) e.getSource()).stop();
+    });
+
+    timer.setRepeats(false); // garante que só rode uma vez
+    timer.start();
+}
+
 
     /**
      * @param args the command line arguments
