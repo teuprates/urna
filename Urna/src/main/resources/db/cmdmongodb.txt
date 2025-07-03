@@ -1,0 +1,25 @@
+use urna
+
+db.candidato.insertMany([
+  { Nome: "Golfo", Numero: "91001", Partido: "PEsp", Votos: 0 },
+  { Nome: "Beisebol", Numero: "91002", Partido: "PEsp", Votos: 0 },
+  { Nome: "Ginástica Artística", Numero: "91003", Partido: "PEsp", Votos: 0 },
+  
+  { Nome: "Rock", Numero: "92001", Partido: "PMus", Votos: 0 },
+  { Nome: "Sertanejo", Numero: "92002", Partido: "PMus", Votos: 0 },
+  { Nome: "Música Popular Brasileira", Numero: "92003", Partido: "PMus", Votos: 0 },
+  
+  { Nome: "Astronauta", Numero: "93001", Partido: "PProf", Votos: 0 },
+  { Nome: "Pintor", Numero: "93002", Partido: "PProf", Votos: 0 },
+  { Nome: "Enfermeira", Numero: "93003", Partido: "PProf", Votos: 0 },
+  
+  { Nome: "Páscoa", Numero: "94001", Partido: "PFest", Votos: 0 },
+  { Nome: "Oktoberfest", Numero: "94002", Partido: "PFest", Votos: 0 },
+  { Nome: "Reveillon", Numero: "94003", Partido: "PFest", Votos: 0 },
+  
+  { Nome: "Curupira", Numero: "95001", Partido: "PFolc", Votos: 0 },
+  { Nome: "Cabra Cabriola", Numero: "95002", Partido: "PFolc", Votos: 0 },
+  { Nome: "Cuca", Numero: "95003", Partido: "PFolc", Votos: 0 }
+])
+
+db.votos.find().pretty()
