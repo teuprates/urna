@@ -1,7 +1,7 @@
 package com.mycompany.view;
 
-import com.urnaEletronica.controller.Verificador;
-import com.urnaEletronica.model.Candidato;
+import controller.UrnaController;
+import model.Candidato;
 import javax.swing.JOptionPane;
 
 public class Urna extends javax.swing.JFrame {
@@ -27,9 +27,9 @@ public class Urna extends javax.swing.JFrame {
         btn4 = new javax.swing.JButton();
         btn5 = new javax.swing.JButton();
         btn6 = new javax.swing.JButton();
-        btn7 = new javax.swing.JButton();
-        btn8 = new javax.swing.JButton();
         btn9 = new javax.swing.JButton();
+        btn8 = new javax.swing.JButton();
+        btn7 = new javax.swing.JButton();
         btn0 = new javax.swing.JButton();
         btnBranco = new javax.swing.JButton();
         btnCorrige = new javax.swing.JButton();
@@ -60,10 +60,20 @@ public class Urna extends javax.swing.JFrame {
         btn1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btn1.setForeground(new java.awt.Color(255, 255, 255));
         btn1.setText("1");
+        btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn1ActionPerformed(evt);
+            }
+        });
 
         btn2.setBackground(new java.awt.Color(51, 51, 51));
         btn2.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btn2.setText("2");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
         btn3.setBackground(new java.awt.Color(51, 51, 51));
         btn3.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
@@ -77,29 +87,54 @@ public class Urna extends javax.swing.JFrame {
         btn4.setBackground(new java.awt.Color(51, 51, 51));
         btn4.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btn4.setText("4");
+        btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4ActionPerformed(evt);
+            }
+        });
 
         btn5.setBackground(new java.awt.Color(51, 51, 51));
         btn5.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btn5.setText("5");
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
+            }
+        });
 
         btn6.setBackground(new java.awt.Color(51, 51, 51));
         btn6.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btn6.setText("6");
+        btn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn6ActionPerformed(evt);
+            }
+        });
 
-        btn7.setBackground(new java.awt.Color(51, 51, 51));
-        btn7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btn7.setText("9");
+        btn9.setBackground(new java.awt.Color(51, 51, 51));
+        btn9.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btn9.setText("9");
+        btn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn9ActionPerformed(evt);
+            }
+        });
 
         btn8.setBackground(new java.awt.Color(51, 51, 51));
         btn8.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         btn8.setText("8");
-
-        btn9.setBackground(new java.awt.Color(51, 51, 51));
-        btn9.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
-        btn9.setText("7");
-        btn9.addActionListener(new java.awt.event.ActionListener() {
+        btn8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn9ActionPerformed(evt);
+                btn8ActionPerformed(evt);
+            }
+        });
+
+        btn7.setBackground(new java.awt.Color(51, 51, 51));
+        btn7.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btn7.setText("7");
+        btn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn7ActionPerformed(evt);
             }
         });
 
@@ -116,6 +151,11 @@ public class Urna extends javax.swing.JFrame {
         btnBranco.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
         btnBranco.setForeground(new java.awt.Color(0, 0, 0));
         btnBranco.setText("BRANCO");
+        btnBranco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBrancoActionPerformed(evt);
+            }
+        });
 
         btnCorrige.setBackground(new java.awt.Color(255, 0, 0));
         btnCorrige.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
@@ -131,6 +171,11 @@ public class Urna extends javax.swing.JFrame {
         btnConfirma.setFont(new java.awt.Font("Segoe UI Black", 1, 10)); // NOI18N
         btnConfirma.setForeground(new java.awt.Color(0, 0, 0));
         btnConfirma.setText("CONFIRMA");
+        btnConfirma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConfirmaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout tecladoUrnaLayout = new javax.swing.GroupLayout(tecladoUrna);
         tecladoUrna.setLayout(tecladoUrnaLayout);
@@ -141,7 +186,7 @@ public class Urna extends javax.swing.JFrame {
                 .addGroup(tecladoUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBranco, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(tecladoUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +200,7 @@ public class Urna extends javax.swing.JFrame {
                         .addGroup(tecladoUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btn3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tecladoUrnaLayout.createSequentialGroup()
                         .addComponent(btnCorrige, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -178,8 +223,8 @@ public class Urna extends javax.swing.JFrame {
                     .addComponent(btn6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(tecladoUrnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addComponent(btn0, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,10 +238,12 @@ public class Urna extends javax.swing.JFrame {
 
         telaUrna.setBackground(new java.awt.Color(153, 153, 153));
         telaUrna.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        telaUrna.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
 
         labelFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        campoNumero.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        campoNumero.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        campoNumero.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         campoNumero.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         seuvoto.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
@@ -265,7 +312,7 @@ public class Urna extends javax.swing.JFrame {
                             .addGroup(telaUrnaLayout.createSequentialGroup()
                                 .addComponent(numero, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(campoNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(telaUrnaLayout.createSequentialGroup()
                                 .addComponent(partido, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -371,20 +418,86 @@ public class Urna extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        // TODO add your handling code here:
+        campoNumero.setText(campoNumero.getText()+ "3");
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        // TODO add your handling code here:
+        campoNumero.setText(campoNumero.getText()+ "0");
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void btnCorrigeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCorrigeActionPerformed
-
+        campoNumero.setText("");
+        labelNome.setText("");
+        labelPartido.setText("");
+        labelFoto.setText("");
     }//GEN-LAST:event_btnCorrigeActionPerformed
 
+    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        campoNumero.setText(campoNumero.getText()+ "7");
+    }//GEN-LAST:event_btn7ActionPerformed
+
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        // TODO add your handling code here:
+        campoNumero.setText(campoNumero.getText()+ "9");
     }//GEN-LAST:event_btn9ActionPerformed
+
+    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+        campoNumero.setText(campoNumero.getText()+ "8");
+    }//GEN-LAST:event_btn8ActionPerformed
+
+    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        campoNumero.setText(campoNumero.getText()+ "6");
+    }//GEN-LAST:event_btn6ActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        campoNumero.setText(campoNumero.getText()+ "5");
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        campoNumero.setText(campoNumero.getText()+ "4");
+    }//GEN-LAST:event_btn4ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        campoNumero.setText(campoNumero.getText()+ "2");
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        campoNumero.setText(campoNumero.getText()+ "1");
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btnConfirmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmaActionPerformed
+       String numero = campoNumero.getText();
+        UrnaController urnacontroller = new UrnaController();
+        Candidato candidato = urnacontroller.buscarPorNumero(numero);
+
+        if (numero.equals("Branco")) {
+            labelNome.setText("Branco");
+            labelPartido.setText("");
+            labelFoto.setText("");
+            return;
+        }
+         if (numero.equals("99999")) {
+        JOptionPane.showMessageDialog(null, "Encerrando votação!");
+        return;
+    }
+        if (candidato != null) {
+            labelNome.setText("" + candidato.getNome());
+            labelPartido.setText("" + candidato.getPartido());
+            labelFoto.setText("" + candidato.getFoto());
+            
+        } else {
+            labelNome.setText("VOTO NULO");
+            labelPartido.setText("Número inválido");
+            labelFoto.setText("");
+            
+        }     
+    }//GEN-LAST:event_btnConfirmaActionPerformed
+
+    private void btnBrancoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBrancoActionPerformed
+        campoNumero.setText("Branco");
+        labelNome.setText("Branco");
+        labelPartido.setText("");
+        labelFoto.setText("");
+    }//GEN-LAST:event_btnBrancoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,7 +523,6 @@ public class Urna extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new Urna().setVisible(true));
     }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Urninha;
     private javax.swing.JLabel aperteTecla;
@@ -443,16 +555,4 @@ public class Urna extends javax.swing.JFrame {
     private javax.swing.JLabel vereador;
     private javax.swing.JLabel vermelhoReiniciar;
     // End of variables declaration//GEN-END:variables
-
-    private static class JButton {
-
-        public JButton() {
-        }
-    }
-
-    private static class JTextField {
-
-        public JTextField() {
-        }
-    }
- }
+}
